@@ -1,4 +1,4 @@
-package com.ssp.apps.microservices.moviemanagement.movierating;
+package com.ssp.apps.microservices.movierating;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

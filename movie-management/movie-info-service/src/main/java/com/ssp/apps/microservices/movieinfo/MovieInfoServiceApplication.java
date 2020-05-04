@@ -1,4 +1,4 @@
-package com.ssp.apps.microservices.moviemanagement.movieinfo;
+package com.ssp.apps.microservices.movieinfo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
