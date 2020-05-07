@@ -2,6 +2,7 @@ package com.ssp.apps.cloud.user.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -18,6 +19,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .withUser("prasad").password("pass").roles("ADMIN");
     }
  // @formatter:on
+
+    // @formatter:off
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        String[]  allowedResources = {"/h2-console/**"};
+        
+        http
+        .authorizeRequests()
+        .antMatchers(allowedResources).permitAll()
+        .anyRequest().authenticated();
+    }
+    // @formatter:on
 
     @Bean
     public PasswordEncoder passwordEncoder() {
