@@ -1,5 +1,6 @@
 package com.ssp.apps.cloud.user.dto;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,9 +29,8 @@ public class UserPrincipal implements UserDetails {
         this.password = user.getPassword();
         this.enabled = user.isEnabled();
 
-        this.authorities = user.getAuthorities().stream()
-                .map(authority -> new SimpleGrantedAuthority(authority.getAuthority()))
-                .collect(Collectors.toList());
+        this.authorities = Arrays.stream(user.getRoles().split(","))
+                .map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
 
     }
 

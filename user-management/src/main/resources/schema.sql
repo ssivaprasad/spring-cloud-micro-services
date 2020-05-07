@@ -1,15 +1,8 @@
-DROP TABLE if exists AUTHORITIES;
-DROP TABLE if exists USERS;
+DROP TABLE if exists app_users;
 
-create table users (
+create table app_users (
     username varchar(50) not null primary key,
     password varchar(50) not null,
-    enabled boolean not null
+    enabled boolean not null,
+    roles varchar(250) not null
 );
-
-create table authorities (
-    username varchar(50) not null,
-    authority varchar(50) not null,
-    constraint fk_authorities_users foreign key(username) references users(username)
-);
-create unique index ix_auth_username on authorities (username,authority);
