@@ -26,6 +26,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         String[]  allowedResources = {"/h2-console/**"};
         
         http
+        .csrf().disable()
+        .headers().frameOptions().disable().and()
         .authorizeRequests()
         .antMatchers(allowedResources).permitAll()
         .anyRequest().authenticated();
