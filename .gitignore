@@ -20,3 +20,6 @@ MANIFEST.MF
 
 target
 **/target
+
+bin
+**/bin
