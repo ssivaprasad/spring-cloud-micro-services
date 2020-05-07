@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import com.ssp.apps.cloud.user.service.UserService;
 
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -16,17 +17,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
+    @Autowired
+    private UserService userService;
+
     // @formatter:off
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-       /* auth.inMemoryAuthentication().withUser("Siva").password("pass").roles("USER").and().withUser("prasad").password("pass").roles("ADMIN");*/
+       // auth.inMemoryAuthentication().withUser("Siva").password("pass").roles("USER").and().withUser("prasad").password("pass").roles("ADMIN");
         
-        auth
-        .jdbcAuthentication().dataSource(dataSource)
-        .withDefaultSchema()
-        .withUser("Siva").password("pass").roles("USER").and()
-        .withUser("prasad").password("pass").roles("ADMIN");
-    }
+      //  auth.jdbcAuthentication().dataSource(dataSource).withDefaultSchema().withUser("Siva").password("pass").roles("USER").and().withUser("prasad").password("pass").roles("ADMIN");
+    
+        auth.userDetailsService(userService);
+    };
  // @formatter:on
 
     // @formatter:off
