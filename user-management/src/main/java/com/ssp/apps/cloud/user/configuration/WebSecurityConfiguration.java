@@ -1,5 +1,7 @@
 package com.ssp.apps.cloud.user.configuration;
 
+import javax.sql.DataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,10 +13,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private DataSource dataSource;
+
     // @formatter:off
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
+       /* auth.inMemoryAuthentication().withUser("Siva").password("pass").roles("USER").and().withUser("prasad").password("pass").roles("ADMIN");*/
+        
+        auth
+        .jdbcAuthentication().dataSource(dataSource)
+        .withDefaultSchema()
         .withUser("Siva").password("pass").roles("USER").and()
         .withUser("prasad").password("pass").roles("ADMIN");
     }
@@ -30,7 +39,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .headers().frameOptions().disable().and()
         .authorizeRequests()
         .antMatchers(allowedResources).permitAll()
-        .anyRequest().authenticated();
+        .anyRequest().authenticated().and()
+        .formLogin();
     }
     // @formatter:on
 
