@@ -2,7 +2,6 @@ package com.ssp.apps.movie.catalog.controller;
 
 import java.util.Arrays;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -22,8 +21,6 @@ public class MovieCatalogController {
 
     @GetMapping("checkstatus")
     public String checkStatus() {
-        // String response = movieRatingClient.checkStatus();
-        // System.out.println("==== >> Response: " + response);
         return "Working...!!!,  APP_NAME : " + appName + ", Up and Running on Port: "
                 + environment.getProperty("local.server.port");
     }
