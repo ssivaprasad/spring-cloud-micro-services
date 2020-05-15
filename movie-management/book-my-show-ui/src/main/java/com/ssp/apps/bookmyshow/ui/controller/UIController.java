@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.ssp.apps.bookmyshow.ui.feignclient.MovieCatalogClient;
-import com.ssp.apps.bookmyshow.ui.feignclient.MovieRatingClient;
+import com.ssp.apps.bookmyshow.ui.feign.client.MovieCatalogClient;
+import com.ssp.apps.bookmyshow.ui.feign.client.MovieRatingClient;
 
 @Controller
 @RequestMapping("/")

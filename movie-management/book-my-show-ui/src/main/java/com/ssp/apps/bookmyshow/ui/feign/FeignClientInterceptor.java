@@ -1,4 +1,4 @@
-package com.ssp.apps.bookmyshow.ui;
+package com.ssp.apps.bookmyshow.ui.feign;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

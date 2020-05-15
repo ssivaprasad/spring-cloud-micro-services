@@ -1,4 +1,4 @@
-package com.ssp.apps.bookmyshow.ui.feignclient;
+package com.ssp.apps.bookmyshow.ui.feign.client;
 
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
