@@ -29,7 +29,7 @@ public class OauthServerConfiguration implements AuthorizationServerConfigurer {
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.checkTokenAccess("permitAll()");
+        security.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
     }
 
     @Override
