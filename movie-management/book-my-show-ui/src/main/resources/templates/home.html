@@ -1,0 +1,7 @@
+<html xmlns:th="http://www.thymeleaf.org" th:include="/common/pagelayout :: page__layout">
+
+<div class="container" th:fragment="page__content">
+      <form class="form__group" th:action="@{/loadmovies}" method="GET">
+            <button type="submit"  class="btn btn-primary">Load Movie Names</button>
+      </form>
+</div>
