@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/movie-catalog")
 public class MovieCatalogController {
 
     @Value("${spring.application.name}")
