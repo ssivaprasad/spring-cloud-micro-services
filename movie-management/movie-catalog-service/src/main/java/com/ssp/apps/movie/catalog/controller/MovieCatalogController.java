@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/movies")
 public class MovieCatalogController {
 
-    @Value("${app_name}")
+    @Value("${spring.application.name}")
     private String appName;
 
     @Autowired

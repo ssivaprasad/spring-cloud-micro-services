@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/movie-rating")
 public class MovieRatingController {
 
-    @Value("${app_name}")
+    @Value("${spring.application.name}")
     private String appName;
 
     @GetMapping

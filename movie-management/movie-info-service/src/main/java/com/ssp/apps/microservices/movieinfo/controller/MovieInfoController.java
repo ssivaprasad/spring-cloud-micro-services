@@ -11,7 +11,7 @@ import com.ssp.apps.microservices.movieinfo.feignclient.MovieRatingClient;
 @RequestMapping("/movie-info")
 public class MovieInfoController {
 
-    @Value("${app_name}")
+    @Value("${spring.application.name}")
     private String appName;
 
     @Autowired
