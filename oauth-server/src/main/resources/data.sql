@@ -1,14 +1,14 @@
 INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity,  refresh_token_validity,
  resource_ids,  authorized_grant_types, additional_information) VALUES ('client_1', 'pass', 'http://localhost:8080/login', 'READ,WRITE', '3600', '10000',
- 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+ 'inventory,payment', 'authorization_code,password,refresh_token,implicit,client_credentials', '{}');
  
  INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity,  refresh_token_validity,
  resource_ids,  authorized_grant_types, additional_information) VALUES ('client_2', 'pass', 'http://localhost:8080/login', 'READ,WRITE', '3600', '10000',
- 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+ 'inventory,payment', 'authorization_code,password,refresh_token,implicit,client_credentials', '{}');
  
   INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity,  refresh_token_validity,
  resource_ids,  authorized_grant_types, additional_information) VALUES ('bookmyshow_ui', 'pass', 'http://localhost:8080/bookmyshow/login', 'READ,WRITE', '3600', '10000', 
- 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
+ 'inventory,payment', 'authorization_code,password,refresh_token,implicit,client_credentials', '{}');
 
  INSERT INTO PERMISSION (NAME) VALUES ('create_profile'), ('read_profile'), ('update_profile'), ('delete_profile');
 
