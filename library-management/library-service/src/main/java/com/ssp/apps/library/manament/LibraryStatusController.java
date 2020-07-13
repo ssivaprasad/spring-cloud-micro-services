@@ -1,4 +1,4 @@
-package com.ssp.apps.library.manament.books;
+package com.ssp.apps.library.manament;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
