@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class LibraryStatusController {
 
     @Value("${app.status.check.message}")
-    private String appSrtatusCheckMessage;
+    private String appStatusCheckMessage;
 
     @GetMapping("/checkstatus")
     public String checkStatus() {
-        return appSrtatusCheckMessage;
+        return appStatusCheckMessage;
     }
 }
