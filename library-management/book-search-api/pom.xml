@@ -10,10 +10,10 @@
   </parent>
 
   <groupId>com.ssp.apps.library.management</groupId>
-  <artifactId>todo-search-api</artifactId>
+  <artifactId>book-search-api</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>todo-search-api</name>
+  <name>book-search-api</name>
 
   <properties>
     <java.version>1.8</java.version>
