@@ -1,4 +1,4 @@
-books-api           :   API to manages books - add/update/delete
+manage-books-api    :   API to manages books - add/update/delete
 
 books-search-api    :   API to search books
 
