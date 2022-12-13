@@ -1,4 +1,4 @@
-package com.ssp.apps.common.todo;
+package com.ssp.apps.todo;
 
 import com.ssp.apps.common.mapper.GenericMapper;
 import org.mapstruct.Mapper;

@@ -1,4 +1,4 @@
-package com.ssp.apps.common.todo;
+package com.ssp.apps.todo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

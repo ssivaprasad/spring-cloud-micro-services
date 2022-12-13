@@ -1,4 +1,4 @@
-package com.ssp.apps.common.todo;
+package com.ssp.apps.todo;
 
 import com.ssp.apps.common.controller.GenericController;
 import org.springframework.web.bind.annotation.RequestMapping;
