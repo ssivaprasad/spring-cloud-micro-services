@@ -1,4 +1,4 @@
-package com.ssp.apps.library.managemnt.search.books;
+package com.ssp.apps.library.managemnt.search.books.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

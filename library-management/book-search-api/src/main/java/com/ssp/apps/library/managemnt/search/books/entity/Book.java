@@ -1,4 +1,4 @@
-package com.ssp.apps.library.managemnt.search.books;
+package com.ssp.apps.library.managemnt.search.books.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

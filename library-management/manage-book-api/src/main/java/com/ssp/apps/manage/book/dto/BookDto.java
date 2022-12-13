@@ -1,4 +1,4 @@
-package com.ssp.apps.manage.book;
+package com.ssp.apps.manage.book.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
