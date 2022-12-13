@@ -8,8 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class BookSearchApplication {
     public static void main(String[] args) {
-        System.setProperty("spring.mvc.pathmatch.matching-strategy", "ant_path_matcher");
-        System.setProperty("spring.h2.console.enabled", "true");
         SpringApplication.run(BookSearchApplication.class, args);
     }
 }
