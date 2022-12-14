@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/book-search")
+@RequestMapping("/books")
 public class BookSearchController {
     @Autowired
     private BookRepository bookRepository;
