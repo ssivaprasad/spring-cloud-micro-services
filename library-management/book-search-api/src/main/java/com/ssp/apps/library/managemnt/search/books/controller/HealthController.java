@@ -19,7 +19,7 @@ public class HealthController {
         Map<String, String> response = new HashMap<>();
 
         response.put("application", environment.getProperty("spring.application.name"));
-        response.put("port", environment.getProperty("server.port"));
+        response.put("port", environment.getProperty("local.server.port"));
         response.put("pid", environment.getProperty("PID"));
         response.put("status", "UP");
 
