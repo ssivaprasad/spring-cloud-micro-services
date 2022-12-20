@@ -27,11 +27,11 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Override
     public GatewayFilter apply(Config config) {
         return (exchange, chain) -> {
-            ServerHttpRequest request = exchange.getRequest();
+            /*ServerHttpRequest request = exchange.getRequest();
             List<String> headers = getRequestHeaders(request, HttpHeaders.AUTHORIZATION);
             if (CollectionUtils.isEmpty(headers)) {
                return onError(exchange, "Not Authorized",HttpStatus.UNAUTHORIZED);
-            }
+            }*/
             return chain.filter(exchange);
         };
     }
