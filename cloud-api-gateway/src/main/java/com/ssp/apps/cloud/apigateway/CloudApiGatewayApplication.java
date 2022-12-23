@@ -8,8 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class CloudApiGatewayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CloudApiGatewayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CloudApiGatewayApplication.class, args);
+    }
 
 }
