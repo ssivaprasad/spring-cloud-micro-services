@@ -1,6 +1,7 @@
 package com.ssp.apps.crud.api.common.service;
 
 import com.ssp.apps.crud.api.common.exception.EmptyDataFoundException;
+import com.ssp.apps.crud.api.common.exception.InvalidRequestException;
 import com.ssp.apps.crud.api.common.exception.NoRecordFoundException;
 import com.ssp.apps.crud.api.common.exception.RecordDoesNotExistException;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -31,6 +33,15 @@ public abstract class GenericService<E, I> {
         });
     }
 
+    public List<E> findAll() {
+        List<E> data = repository.findAll();
+
+        if (CollectionUtils.isEmpty(data)) {
+            throw new EmptyDataFoundException("No Data found");
+        }
+        return data;
+    }
+
     public Page<E> findAll(Integer pageNumber, Integer size) {
         pageNumber = pageNumber != null ? pageNumber : 0;
         size = size != null ? size : 10;
@@ -46,14 +57,14 @@ public abstract class GenericService<E, I> {
 
     public E save(E entity) {
         if (entity == null) {
-            throw new IllegalArgumentException(String.format("Object Cannot be null: %s", entityClassType));
+            throw new InvalidRequestException(String.format("entity Cannot be null: %s", entityClassType));
         }
         return repository.save(entity);
     }
 
     public E update(E entity, I id) {
         if (entity == null) {
-            throw new IllegalArgumentException(String.format("Object Cannot be null: %s", entityClassType));
+            throw new InvalidRequestException(String.format("entity Cannot be null: %s", entityClassType));
         }
 
         if (isExist(id).isPresent()) {

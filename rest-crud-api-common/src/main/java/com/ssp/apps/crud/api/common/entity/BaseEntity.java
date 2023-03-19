@@ -9,7 +9,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
