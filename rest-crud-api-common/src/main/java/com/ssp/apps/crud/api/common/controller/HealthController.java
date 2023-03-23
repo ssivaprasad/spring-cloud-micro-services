@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RefreshScope
 public class HealthController {
 
     @Autowired
